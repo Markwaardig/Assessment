@@ -6,13 +6,7 @@ class ChoiceInline(admin.TabularInline):
     # number of extra lines available
     extra = 1
 
-
 class QuestionAdmin(admin.ModelAdmin):
-    #fieldsets = [
-    #    (None,               {'fields': ['question_text']}),
-    #    ('Date information', {'fields': ['pub_date'], 'classes': ['collapse']}),
-    #]
-    
     list_display = ('question_text', 'pub_date', 'was_published_recently')	# specifies the sequence of display
     list_filter = ['pub_date']	# ensures that filter is being displayed
     search_fields = ['question_text']	# is showing filter function on top of the page
