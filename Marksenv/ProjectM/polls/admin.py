@@ -3,13 +3,18 @@ from polls.models import Choice, Question
 
 class ChoiceInline(admin.TabularInline):
     model = Choice
-    extra = 3
+    # creates 2 extra lines
+    extra = 2
+
 
 class QuestionAdmin(admin.ModelAdmin):
-    fieldsets = [
-        (None,               {'fields': ['question_text']}),
-        ('Date information', {'fields': ['pub_date'], 'classes': ['collapse']}),
-    ]
+    #fieldsets = [
+    #    (None,               {'fields': ['question_text']}),
+    #    ('Date information', {'fields': ['pub_date'], 'classes': ['collapse']}),
+    #]
+    list_display = ('question_text', 'pub_date', 'was_published_recently')
+    
+    # ensures that the table info is shown inline
     inlines = [ChoiceInline]
     
     
