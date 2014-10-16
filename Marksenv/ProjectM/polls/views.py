@@ -19,12 +19,13 @@ def detail(request, question_id):
 
 
 
-# add discription ...  
+# The results show up...  
 def results(request, question_id):
-    response = "You're looking at the results of question %s."
-    return HttpResponse(response % question_id)
+    question = get_object_or_404(Question, pk=question_id)
+    return render(request, 'polls/results.html', {'question': question})
+    
 
-# add discription ...  
+# This wil happen after you have voted...  
 def vote(request, question_id):
     p = get_object_or_404(Question, pk=question_id)
     try:
