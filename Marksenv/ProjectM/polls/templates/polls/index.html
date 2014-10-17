@@ -1,4 +1,8 @@
-<h1>Wich is your favortie poll</h1>
+{% load staticfiles %}
+<!-- link to the stylesheet -->
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+
+<h1>Choose you favorite poll...</h1>
 
 {% if latest_question_list %}
     <ul>

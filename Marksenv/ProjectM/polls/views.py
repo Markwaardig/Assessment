@@ -2,9 +2,7 @@ from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.views import generic
-
 from django.utils import timezone
-
 from polls.models import Choice, Question
 
 class IndexView(generic.ListView):
@@ -36,7 +34,7 @@ class ResultsView(generic.DetailView):
     template_name = 'polls/results.html'
 
 
-# This wil happen after you have voted...  
+# what wil happen after you have voted or ... what will happen if you try to vote without making a choice  
 def vote(request, question_id):
     p = get_object_or_404(Question, pk=question_id)
     try:

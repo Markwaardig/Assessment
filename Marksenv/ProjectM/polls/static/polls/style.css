@@ -1,0 +1,38 @@
+/*CSS Reset*/
+@import url("reset.css");
+
+body {
+	font-family: Arial;
+	font-size: 14px;
+	margin-left: 5px;
+	line-height: 140%;
+}
+
+h1 {
+	font-size: 30px;
+	margin: 10px 0 20px 0; 
+}
+
+a:visited {color: orange;}
+
+input[type=submit] {
+	width: 110px;
+	height: 30px;
+	margin-top: 20px;  
+	background-color: orange;
+  	border: 2px solid orange; 
+  	color:white;
+}
+input[type=submit]:hover {
+	background-color: white;
+	color: orange;
+}
+
+ul {
+	list-style-type: upper-roman;
+	list-style-position: inside;
+}
+li{
+	display: list-item;
+	margin-left: 20px;
+}
